@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MiDatara - Real Agency</title>
   <link rel="icon" type="image/png" href="logo-icon.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -19,9 +19,10 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #f8f7f5 0%, #e0e7ff 100%);
+      background: linear-gradient(180deg, #f8f7f5 0%, #e0e7ff 50%, #ffffff 100%);
       color: #0a2240;
       overflow-x: hidden;
+      position: relative;
     }
 
     #particles-js {
@@ -29,30 +30,32 @@
       width: 100%;
       height: 100%;
       z-index: -1;
+      background: transparent;
     }
 
     header {
-      padding: 20px 0;
+      padding: 15px 0;
       width: 100%;
-      background-color: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.7));
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
+      transition: background 0.3s ease;
     }
 
     header img {
-      width: 80px;
-      height: 80px;
-      display: block;
+      width: 90px;
+      height: 90px;
       margin: 0 auto;
-      animation: spin 20s linear infinite;
+      filter: drop-shadow(0 5px 15px rgba(210, 31, 38, 0.4));
+      animation: pulse-logo 2.5s ease-in-out infinite;
     }
 
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    @keyframes pulse-logo {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
     }
 
     .hero {
@@ -61,97 +64,134 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 100px 20px;
+      padding: 120px 20px;
       min-height: 100vh;
       text-align: center;
       overflow: hidden;
+      background: radial-gradient(circle at center, rgba(210, 31, 38, 0.2) 0%, transparent 70%);
     }
 
-    .hero::before {
+    .hero::after {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle, rgba(210, 31, 38, 0.1) 0%, transparent 70%);
+      background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"%3E%3Ccircle cx="100" cy="100" r="80" fill="none" stroke="%23d21f26" stroke-width="2" opacity="0.2"%3E%3Canimate attributeName="r" values="80;90;80" dur="5s" repeatCount="indefinite"/%3E%3C/circle%3E%3C/svg%3E') center/200px;
+      animation: rotate 20s linear infinite;
       z-index: -1;
+    }
+
+    @keyframes rotate {
+      100% { transform: rotate(360deg); }
     }
 
     .logo-text {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 30px;
-      margin-bottom: 30px;
+      gap: 40px;
+      margin-bottom: 40px;
+      perspective: 1000px;
     }
 
     .logo-text img {
-      width: 140px;
-      height: 140px;
-      filter: drop-shadow(0 10px 20px rgba(210, 31, 38, 0.3));
+      width: 160px;
+      height: 160px;
+      filter: drop-shadow(0 15px 30px rgba(210, 31, 38, 0.5));
+      transition: transform 0.5s ease;
     }
 
     h1 {
-      font-size: 4rem;
-      font-weight: 700;
-      background: linear-gradient(45deg, #0a2240, #d21f26);
+      font-size: 5rem;
+      font-weight: 900;
+      background: linear-gradient(45deg, #0a2240, #d21f26, #ff6b6b);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      background-clip: text;
+      text-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      animation: text-glow 3s ease-in-out infinite;
+    }
+
+    @keyframes text-glow {
+      0%, 100% { text-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
+      50% { text-shadow: 0 5px 30px rgba(210, 31, 38, 0.7); }
     }
 
     h1 span {
-      background: linear-gradient(45deg, #d21f26, #ff6b6b);
+      background: linear-gradient(45deg, #d21f26, #ff8c8c);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero p {
-      font-size: 1.3rem;
-      max-width: 700px;
-      opacity: 0.9;
+      font-size: 1.5rem;
+      max-width: 800px;
+      line-height: 1.7;
+      color: #0a2240;
+      text-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
     }
 
     .section {
-      padding: 80px 20px;
-      max-width: 1200px;
+      padding: 100px 20px;
+      max-width: 1400px;
       margin: 0 auto;
     }
 
     h2 {
-      font-size: 2.5rem;
+      font-size: 3rem;
+      font-weight: 700;
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 60px;
       background: linear-gradient(45deg, #0a2240, #d21f26);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      text-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
     }
 
     .mission {
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 60px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.8));
+      backdrop-filter: blur(15px);
+      border-radius: 30px;
+      padding: 80px;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mission::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(transparent, rgba(210, 31, 38, 0.2), transparent);
+      animation: rotate 10s linear infinite;
+      z-index: -1;
+    }
+
+    .mission p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #0a2240;
     }
 
     .values {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 40px;
     }
 
     .value-card {
-      background: linear-gradient(135deg, rgba(10, 34, 64, 0.9), rgba(210, 31, 38, 0.8));
+      background: linear-gradient(135deg, #0a2240 0%, #1a3c6d 100%);
       color: #fff;
-      padding: 40px 30px;
-      border-radius: 20px;
+      padding: 50px 30px;
+      border-radius: 25px;
       text-align: center;
       position: relative;
       overflow: hidden;
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     }
 
     .value-card::before {
@@ -161,13 +201,9 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: conic-gradient(transparent, rgba(255,255,255,0.1), transparent);
-      animation: rotate 4s linear infinite;
+      background: conic-gradient(transparent, rgba(255, 255, 255, 0.2), transparent);
+      animation: rotate 5s linear infinite;
       z-index: 0;
-    }
-
-    @keyframes rotate {
-      100% { transform: rotate(360deg); }
     }
 
     .value-card > * {
@@ -176,60 +212,60 @@
     }
 
     .value-card i {
-      font-size: 4rem;
-      margin-bottom: 20px;
-      display: block;
-      animation: pulse 2s ease-in-out infinite;
+      font-size: 5rem;
+      margin-bottom: 25px;
+      color: #d21f26;
+      animation: bounce 2s ease-in-out infinite;
     }
 
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
     }
 
     .value-card h3 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
     }
 
     .value-card p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      font-size: 1.2rem;
+      line-height: 1.7;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     }
 
-    .vector-section {
-      padding: 80px 20px;
-    }
-
-    .data-flow {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 400px;
+    .data-flow-section {
+      padding: 100px 20px;
+      background: linear-gradient(180deg, rgba(210, 31, 38, 0.1), transparent);
+      position: relative;
     }
 
     .data-svg {
       width: 100%;
-      max-width: 600px;
-      height: auto;
+      max-width: 800px;
+      height: 400px;
+      margin: 0 auto;
+      display: block;
     }
 
     footer {
-      padding: 30px;
+      padding: 40px;
       text-align: center;
       background: linear-gradient(135deg, #0a2240, #d21f26);
       color: #fff;
-      font-size: 1rem;
+      font-size: 1.1rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     }
 
     @media (max-width: 768px) {
-      h1 { font-size: 2.8rem; }
-      h2 { font-size: 2rem; }
+      h1 { font-size: 3rem; }
+      h2 { font-size: 2.2rem; }
       .logo-text { gap: 20px; }
-      .logo-text img { width: 100px; height: 100px; }
-      .mission { padding: 40px 20px; }
+      .logo-text img { width: 120px; height: 120px; }
+      .mission { padding: 50px 20px; }
+      .values { grid-template-columns: 1fr; }
+      .data-svg { height: 300px; }
     }
   </style>
 </head>
@@ -245,117 +281,181 @@
       <img src="logo-full.png" alt="MiDatara Logo Completo" />
       <h1><span>Mi</span>Datara</h1>
     </div>
-    <p>Transformamos tus datos en experiencias digitales únicas. En MiDatara, creamos páginas y aplicaciones web que dan vida a tus ideas con innovación y precisión.</p>
+    <p>Convertimos datos en experiencias digitales que inspiran, conectan y transforman. En MiDatara, diseñamos páginas y aplicaciones web que dan vida a tus ideas con creatividad, tecnología y precisión.</p>
   </section>
 
-  <svg class="data-svg" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="dataGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" style="stop-color:#d21f26;stop-opacity:1" />
-        <stop offset="100%" style="stop-color:#0a2240;stop-opacity:1" />
-      </linearGradient>
-    </defs>
-    <path d="M50 150 Q200 50 350 150 T650 150" stroke="url(#dataGrad)" stroke-width="3" fill="none">
-      <animate attributeName="stroke-dasharray" from="0,1000" to="1000,0" dur="3s" repeatCount="indefinite" />
-    </path>
-    <circle cx="50" cy="150" r="8" fill="#d21f26">
-      <animate attributeName="cy" values="150;100;150" dur="2s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="350" cy="150" r="8" fill="#0a2240">
-      <animate attributeName="r" values="8;15;8" dur="2s" repeatCount="indefinite" />
-    </circle>
-    <circle cx="650" cy="150" r="8" fill="#d21f26">
-      <animateMotion path="M50 150 Q200 50 350 150 T650 150" dur="4s" repeatCount="indefinite" />
-    </circle>
-    <text x="400" y="200" fill="#0a2240" font-size="20" text-anchor="middle">Flujo de Datos → Experiencias</text>
-  </svg>
+  <section class="data-flow-section">
+    <h2>Flujo de Datos, Historias que Cobran Vida</h2>
+    <svg class="data-svg" viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="dataGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#d21f26;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#0a2240;stop-opacity:1" />
+        </linearGradient>
+      </defs>
+      <path d="M50 200 Q250 50 500 200 T950 200" stroke="url(#dataGrad)" stroke-width="4" fill="none">
+        <animate attributeName="stroke-dasharray" from="0,1500" to="1500,0" dur="4s" repeatCount="indefinite" />
+        <animate attributeName="stroke-width" values="4;6;4" dur="2s" repeatCount="indefinite" />
+      </path>
+      <circle cx="50" cy="200" r="10" fill="#d21f26">
+        <animate attributeName="cy" values="200;150;200" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="r" values="10;15;10" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="500" cy="200" r="12" fill="#0a2240">
+        <animate attributeName="r" values="12;18;12" dur="1.5s" repeatCount="indefinite" />
+        <animate attributeName="fill-opacity" values="1;0.5;1" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="950" cy="200" r="10" fill="#d21f26">
+        <animateMotion path="M50 200 Q250 50 500 200 T950 200" dur="5s" repeatCount="indefinite" />
+        <animate attributeName="r" values="10;14;10" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <path d="M200 250 Q350 100 500 250 T800 250" stroke="#0a2240" stroke-width="3" fill="none" opacity="0.5">
+        <animate attributeName="stroke-dasharray" from="0,1000" to="1000,0" dur="5s" repeatCount="indefinite" />
+      </path>
+      <text x="500" y="320" fill="#0a2240" font-size="24" text-anchor="middle" font-weight="600">
+        Datos → Experiencias Digitales
+        <animate attributeName="opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite" />
+      </text>
+    </svg>
+  </section>
 
   <section class="section mission">
     <h2>¿Qué es MiDatara?</h2>
-    <p>MiDatara, o "<strong>Mi Data, Real Agency</strong>", es una agencia creativa especializada en el desarrollo de páginas web y aplicaciones digitales. Nuestro nombre encapsula nuestra filosofía: <strong>Mi</strong> por la personalización íntima y cercana con cada cliente, <strong>Data</strong> por nuestra maestría en transformar datos crudos en insights visuales y experiencias interactivas, y <strong>RA (Real Agency)</strong> por nuestro enfoque auténtico, entregando resultados medibles y reales que impulsan tu negocio.</p>
-    <p>En un mundo saturado de información, nosotros creamos soluciones web que no solo informan, sino que inspiran, convierten y conectan. Desde diseño responsive hasta integraciones de IA y visualizaciones de datos avanzadas, todo a medida para ti.</p>
+    <p><strong>MiDatara</strong>, que significa "<strong>Mi Data, Real Agency</strong>", es una agencia creativa que transforma datos en experiencias digitales únicas. Nuestro nombre refleja nuestro propósito: <strong>Mi</strong> simboliza nuestra dedicación a personalizar cada proyecto para que sea tan único como tú, <strong>Data</strong> representa nuestra capacidad para convertir información cruda en soluciones visuales e interactivas, y <strong>RA (Real Agency)</strong> encarna nuestro compromiso con resultados auténticos, impactantes y medibles.</p>
+    <p>En MiDatara, no solo creamos páginas web y aplicaciones; construimos puentes entre tus ideas y el mundo digital. Desde sitios web responsivos hasta aplicaciones dinámicas con integraciones de IA, visualizaciones de datos y experiencias inmersivas, nuestro enfoque combina creatividad, tecnología de vanguardia y un toque humano para garantizar que tu visión cobre vida de manera espectacular.</p>
   </section>
 
   <section class="section values">
-    <h2>Nuestros Valores</h2>
+    <h2>Nuestros Valores Fundamentales</h2>
     <div class="value-card">
       <i class="fas fa-rocket"></i>
       <h3>Innovación</h3>
-      <p>Utilizamos las últimas tecnologías para crear experiencias digitales modernas y funcionales.</p>
+      <p>Impulsamos el futuro con tecnologías de punta, creando experiencias digitales modernas, fluidas y funcionales que destacan en un mundo competitivo.</p>
     </div>
     <div class="value-card">
       <i class="fas fa-user-cog"></i>
       <h3>Personalización</h3>
-      <p>Cada proyecto es único, diseñado específicamente para reflejar la identidad y metas de nuestros clientes.</p>
+      <p>Cada proyecto es una extensión de tu visión. Diseñamos soluciones únicas que reflejan tu identidad y conectan profundamente con tu audiencia.</p>
     </div>
     <div class="value-card">
       <i class="fas fa-chart-line"></i>
       <h3>Impacto</h3>
-      <p>Convertimos datos en historias visuales que enganchan y generan resultados reales y medibles.</p>
+      <p>Transformamos datos en historias visuales que no solo informan, sino que inspiran, enganchan y generan resultados medibles para tu negocio.</p>
     </div>
   </section>
 
   <footer>
-    © 2025 MiDatara · Real Agency | Transformando datos en realidades digitales
+    © 2025 MiDatara · Real Agency | Donde los datos se convierten en experiencias inolvidables
   </footer>
 
   <script>
     gsap.registerPlugin(ScrollTrigger);
 
-    // Particles.js config for data-like particles
+    // Particles.js config for immersive data particles
     particlesJS('particles-js', {
       particles: {
-        number: { value: 80, density: { enable: true, value_area: 800 } },
-        color: { value: ['#d21f26', '#0a2240', '#ff6b6b'] },
-        shape: { type: 'circle' },
-        opacity: { value: 0.5, random: true },
-        size: { value: 3, random: true },
-        line_linked: { enable: true, distance: 150, color: '#0a2240', opacity: 0.3, width: 1 },
-        move: { enable: true, speed: 2, direction: 'none', random: true }
+        number: { value: 100, density: { enable: true, value_area: 800 } },
+        color: { value: ['#d21f26', '#0a2240', '#ff6b6b', '#ffffff'] },
+        shape: { type: ['circle', 'triangle', 'edge'], polygon: { nb_sides: 5 } },
+        opacity: { value: 0.6, random: true },
+        size: { value: 4, random: true },
+        line_linked: { enable: true, distance: 120, color: '#0a2240', opacity: 0.4, width: 1.5 },
+        move: { enable: true, speed: 3, direction: 'none', random: true, out_mode: 'bounce' }
       },
       interactivity: {
         detect_on: 'canvas',
-        events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' } },
-        modes: { repulse: { distance: 100 }, push: { particles_nb: 4 } }
+        events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: true, mode: 'push' } },
+        modes: { grab: { distance: 200, line_linked: { opacity: 0.7 } }, push: { particles_nb: 5 } }
       },
       retina_detect: true
     });
 
     // GSAP animations
-    gsap.from('.hero', { duration: 1, y: 100, opacity: 0, ease: 'bounce.out' });
-    gsap.from('.logo-text', { duration: 1.5, scale: 0.5, rotation: 180, ease: 'back.out(1.7)' });
+    gsap.from('.hero', {
+      duration: 1.5,
+      y: 150,
+      opacity: 0,
+      ease: 'power4.out'
+    });
+
+    gsap.from('.logo-text img', {
+      duration: 2,
+      rotationY: 360,
+      scale: 0.5,
+      ease: 'back.out(1.7)',
+      delay: 0.3
+    });
+
+    gsap.from('.hero h1', {
+      duration: 1.5,
+      y: 100,
+      opacity: 0,
+      ease: 'power3.out',
+      delay: 0.5
+    });
+
+    gsap.from('.hero p', {
+      duration: 1.5,
+      y: 50,
+      opacity: 0,
+      ease: 'power2.out',
+      delay: 0.7
+    });
 
     gsap.utils.toArray('.value-card').forEach((card, i) => {
       gsap.from(card, {
         scrollTrigger: {
           trigger: card,
-          start: 'top 80%',
+          start: 'top 85%',
           toggleActions: 'play none none reverse'
         },
-        duration: 1,
-        y: 100,
+        duration: 1.2,
+        y: 150,
         opacity: 0,
         rotationX: -90,
         ease: 'back.out(1.7)',
-        delay: i * 0.2
+        delay: i * 0.3
       });
 
-      // Hover effect
-      card.addEventListener('mouseenter', () => gsap.to(card, { scale: 1.05, duration: 0.3 }));
-      card.addEventListener('mouseleave', () => gsap.to(card, { scale: 1, duration: 0.3 }));
+      card.addEventListener('mouseenter', () => gsap.to(card, { scale: 1.08, boxShadow: '0 20px 50px rgba(0, 0, 0, 0.4)', duration: 0.4 }));
+      card.addEventListener('mouseleave', () => gsap.to(card, { scale: 1, boxShadow: '0 15px 40px rgba(0, 0, 0, 0.3)', duration: 0.4 }));
     });
 
-    // Animate mission text
+    gsap.from('.mission', {
+      scrollTrigger: { trigger: '.mission', start: 'top 80%' },
+      duration: 1.5,
+      scale: 0.9,
+      opacity: 0,
+      ease: 'power3.out'
+    });
+
     gsap.from('.mission p', {
-      scrollTrigger: { trigger: '.mission', start: 'top 70%' },
-      duration: 1,
-      stagger: 0.5,
+      scrollTrigger: { trigger: '.mission', start: 'top 80%' },
+      duration: 1.5,
       y: 50,
       opacity: 0,
+      stagger: 0.3,
       ease: 'power2.out'
     });
 
-    // SVG vector animations already in HTML with SMIL
+    gsap.from('.data-svg path, .data-svg circle, .data-svg text', {
+      scrollTrigger: { trigger: '.data-flow-section', start: 'top 80%' },
+      duration: 2,
+      opacity: 0,
+      scale: 0.8,
+      stagger: 0.2,
+      ease: 'elastic.out(1, 0.5)'
+    });
+
+    // Parallax effect on hero background
+    gsap.to('.hero::after', {
+      scrollTrigger: {
+        trigger: '.hero',
+        scrub: 1
+      },
+      y: 100,
+      ease: 'none'
+    });
   </script>
 </body>
 </html>
