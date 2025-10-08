@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MiDatara - Real Agency</title>
+  <title>MiDatara - Transformando Datos en Experiencias Digitales</title>
   <link rel="icon" type="image/png" href="logo-icon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -34,7 +34,7 @@
     }
 
     header {
-      padding: 15px 0;
+      padding: 20px 0;
       width: 100%;
       background: linear-gradient(90deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.7));
       backdrop-filter: blur(12px);
@@ -71,22 +71,6 @@
       background: radial-gradient(circle at center, rgba(210, 31, 38, 0.2) 0%, transparent 70%);
     }
 
-    .hero::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"%3E%3Ccircle cx="100" cy="100" r="80" fill="none" stroke="%23d21f26" stroke-width="2" opacity="0.2"%3E%3Canimate attributeName="r" values="80;90;80" dur="5s" repeatCount="indefinite"/%3E%3C/circle%3E%3C/svg%3E') center/200px;
-      animation: rotate 20s linear infinite;
-      z-index: -1;
-    }
-
-    @keyframes rotate {
-      100% { transform: rotate(360deg); }
-    }
-
     .logo-text {
       display: flex;
       align-items: center;
@@ -105,22 +89,21 @@
     h1 {
       font-size: 5rem;
       font-weight: 900;
-      background: linear-gradient(45deg, #0a2240, #d21f26, #ff6b6b);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       text-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
       animation: text-glow 3s ease-in-out infinite;
+    }
+
+    h1 .mi {
+      color: #d21f26;
+    }
+
+    h1 .datara {
+      color: #000000;
     }
 
     @keyframes text-glow {
       0%, 100% { text-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); }
       50% { text-shadow: 0 5px 30px rgba(210, 31, 38, 0.7); }
-    }
-
-    h1 span {
-      background: linear-gradient(45deg, #d21f26, #ff8c8c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
     }
 
     .hero p {
@@ -132,121 +115,180 @@
     }
 
     .section {
-      padding: 100px 20px;
-      max-width: 1400px;
+      padding: 80px 20px;
+      max-width: 1200px;
       margin: 0 auto;
-    }
-
-    h2 {
-      font-size: 3rem;
-      font-weight: 700;
       text-align: center;
-      margin-bottom: 60px;
-      background: linear-gradient(45deg, #0a2240, #d21f26);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
     }
 
     .mission {
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(240, 240, 240, 0.8));
       backdrop-filter: blur(15px);
-      border-radius: 30px;
-      padding: 80px;
-      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .mission::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: conic-gradient(transparent, rgba(210, 31, 38, 0.2), transparent);
-      animation: rotate 10s linear infinite;
-      z-index: -1;
+      border-radius: 20px;
+      padding: 60px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
     }
 
     .mission p {
       font-size: 1.2rem;
       line-height: 1.8;
       color: #0a2240;
-    }
-
-    .values {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 40px;
-    }
-
-    .value-card {
-      background: linear-gradient(135deg, #0a2240 0%, #1a3c6d 100%);
-      color: #fff;
-      padding: 50px 30px;
-      border-radius: 25px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    }
-
-    .value-card::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: conic-gradient(transparent, rgba(255, 255, 255, 0.2), transparent);
-      animation: rotate 5s linear infinite;
-      z-index: 0;
-    }
-
-    .value-card > * {
-      position: relative;
-      z-index: 1;
-    }
-
-    .value-card i {
-      font-size: 5rem;
-      margin-bottom: 25px;
-      color: #d21f26;
-      animation: bounce 2s ease-in-out infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
-
-    .value-card h3 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      text-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
-    }
-
-    .value-card p {
-      font-size: 1.2rem;
-      line-height: 1.7;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .data-flow-section {
-      padding: 100px 20px;
-      background: linear-gradient(180deg, rgba(210, 31, 38, 0.1), transparent);
-      position: relative;
-    }
-
-    .data-svg {
-      width: 100%;
       max-width: 800px;
-      height: 400px;
       margin: 0 auto;
-      display: block;
+    }
+
+    .services-section {
+      padding: 80px 20px;
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .service-card {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .service-card i {
+      font-size: 3rem;
+      color: #d21f26;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #0a2240;
+    }
+
+    .process-section {
+      padding: 80px 20px;
+      background: linear-gradient(180deg, rgba(210, 31, 38, 0.1), transparent);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .process-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .process-card h3 {
+      color: #d21f26;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .portfolio-section {
+      padding: 80px 20px;
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .portfolio-card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .portfolio-card h3 {
+      color: #0a2240;
+      margin-bottom: 15px;
+    }
+
+    .faq-section {
+      padding: 80px 20px;
+      background: rgba(255, 255, 255, 0.9);
+      text-align: center;
+    }
+
+    .faq-item {
+      max-width: 800px;
+      margin: 20px auto;
+      text-align: left;
+      background: #f8f9fa;
+      padding: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .faq-item:hover {
+      background: #e9ecef;
+    }
+
+    .faq-answer {
+      display: none;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    .newsletter-section {
+      padding: 80px 20px;
+      background: linear-gradient(135deg, #0a2240, #d21f26);
+      color: #fff;
+      text-align: center;
+    }
+
+    .newsletter-form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      gap: 10px;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 15px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .newsletter-form button {
+      padding: 15px 30px;
+      background: #d21f26;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .newsletter-form button:hover {
+      background: #ff6b6b;
     }
 
     footer {
@@ -260,12 +302,11 @@
 
     @media (max-width: 768px) {
       h1 { font-size: 3rem; }
-      h2 { font-size: 2.2rem; }
       .logo-text { gap: 20px; }
       .logo-text img { width: 120px; height: 120px; }
-      .mission { padding: 50px 20px; }
-      .values { grid-template-columns: 1fr; }
-      .data-svg { height: 300px; }
+      .services-grid, .process-grid, .portfolio-grid { grid-template-columns: 1fr; }
+      .newsletter-form { flex-direction: column; }
+      .mission { padding: 40px 20px; }
     }
   </style>
 </head>
@@ -279,84 +320,121 @@
   <section class="hero">
     <div class="logo-text">
       <img src="logo-full.png" alt="MiDatara Logo Completo" />
-      <h1><span>Mi</span>Datara</h1>
+      <h1><span class="mi">Mi</span><span class="datara">Datara</span></h1>
     </div>
-    <p>Convertimos datos en experiencias digitales que inspiran, conectan y transforman. En MiDatara, diseñamos páginas y aplicaciones web que dan vida a tus ideas con creatividad, tecnología y precisión.</p>
-  </section>
-
-  <section class="data-flow-section">
-    <h2>Flujo de Datos, Historias que Cobran Vida</h2>
-    <svg class="data-svg" viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="dataGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" style="stop-color:#d21f26;stop-opacity:1" />
-          <stop offset="100%" style="stop-color:#0a2240;stop-opacity:1" />
-        </linearGradient>
-      </defs>
-      <path d="M50 200 Q250 50 500 200 T950 200" stroke="url(#dataGrad)" stroke-width="4" fill="none">
-        <animate attributeName="stroke-dasharray" from="0,1500" to="1500,0" dur="4s" repeatCount="indefinite" />
-        <animate attributeName="stroke-width" values="4;6;4" dur="2s" repeatCount="indefinite" />
-      </path>
-      <circle cx="50" cy="200" r="10" fill="#d21f26">
-        <animate attributeName="cy" values="200;150;200" dur="2s" repeatCount="indefinite" />
-        <animate attributeName="r" values="10;15;10" dur="2s" repeatCount="indefinite" />
-      </circle>
-      <circle cx="500" cy="200" r="12" fill="#0a2240">
-        <animate attributeName="r" values="12;18;12" dur="1.5s" repeatCount="indefinite" />
-        <animate attributeName="fill-opacity" values="1;0.5;1" dur="1.5s" repeatCount="indefinite" />
-      </circle>
-      <circle cx="950" cy="200" r="10" fill="#d21f26">
-        <animateMotion path="M50 200 Q250 50 500 200 T950 200" dur="5s" repeatCount="indefinite" />
-        <animate attributeName="r" values="10;14;10" dur="2s" repeatCount="indefinite" />
-      </circle>
-      <path d="M200 250 Q350 100 500 250 T800 250" stroke="#0a2240" stroke-width="3" fill="none" opacity="0.5">
-        <animate attributeName="stroke-dasharray" from="0,1000" to="1000,0" dur="5s" repeatCount="indefinite" />
-      </path>
-      <text x="500" y="320" fill="#0a2240" font-size="24" text-anchor="middle" font-weight="600">
-        Datos → Experiencias Digitales
-        <animate attributeName="opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite" />
-      </text>
-    </svg>
+    <p>Transformando tus datos en experiencias digitales únicas. Como desarrollador independiente, diseño páginas y aplicaciones web personalizadas que dan vida a tus ideas con creatividad y tecnología de vanguardia.</p>
   </section>
 
   <section class="section mission">
-    <h2>¿Qué es MiDatara?</h2>
-    <p><strong>MiDatara</strong>, que significa "<strong>Mi Data, Real Agency</strong>", es una agencia creativa que transforma datos en experiencias digitales únicas. Nuestro nombre refleja nuestro propósito: <strong>Mi</strong> simboliza nuestra dedicación a personalizar cada proyecto para que sea tan único como tú, <strong>Data</strong> representa nuestra capacidad para convertir información cruda en soluciones visuales e interactivas, y <strong>RA (Real Agency)</strong> encarna nuestro compromiso con resultados auténticos, impactantes y medibles.</p>
-    <p>En MiDatara, no solo creamos páginas web y aplicaciones; construimos puentes entre tus ideas y el mundo digital. Desde sitios web responsivos hasta aplicaciones dinámicas con integraciones de IA, visualizaciones de datos y experiencias inmersivas, nuestro enfoque combina creatividad, tecnología de vanguardia y un toque humano para garantizar que tu visión cobre vida de manera espectacular.</p>
+    <h2 style="font-size: 2.5rem; margin-bottom: 30px;">¿Qué es MiDatara?</h2>
+    <p><strong>MiDatara</strong>, o "<strong>Mi Data, Real Agency</strong>", es mi marca personal como desarrollador independiente especializado en crear soluciones digitales. El nombre refleja mi enfoque: <strong>Mi</strong> por la atención personalizada que ofrezco, <strong>Data</strong> por mi pasión por transformar información en experiencias visuales e interactivas, y <strong>RA (Real Agency)</strong> por mi compromiso con resultados auténticos y efectivos.</p>
+    <p>Trabajo de cerca contigo para entender tus necesidades y convertir tus ideas en sitios web y aplicaciones que no solo son funcionales, sino también atractivos y adaptados a tu visión.</p>
   </section>
 
-  <section class="section values">
-    <h2>Nuestros Valores Fundamentales</h2>
-    <div class="value-card">
-      <i class="fas fa-rocket"></i>
-      <h3>Innovación</h3>
-      <p>Impulsamos el futuro con tecnologías de punta, creando experiencias digitales modernas, fluidas y funcionales que destacan en un mundo competitivo.</p>
+  <section class="services-section">
+    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 50px;">Mis Servicios</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fas fa-code"></i>
+        <h3>Desarrollo Web</h3>
+        <p>Creo sitios web responsivos y modernos, optimizados para cualquier dispositivo, usando las últimas tecnologías.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Aplicaciones Web</h3>
+        <p>Diseño aplicaciones web dinámicas que integran funcionalidades avanzadas para tus necesidades específicas.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-paint-brush"></i>
+        <h3>Diseño UI/UX</h3>
+        <p>Desarrollo interfaces intuitivas y atractivas para garantizar una experiencia de usuario excepcional.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-cogs"></i>
+        <h3>Integraciones</h3>
+        <p>Conecto tus plataformas con APIs y sistemas externos para un flujo de trabajo eficiente.</p>
+      </div>
     </div>
-    <div class="value-card">
-      <i class="fas fa-user-cog"></i>
-      <h3>Personalización</h3>
-      <p>Cada proyecto es una extensión de tu visión. Diseñamos soluciones únicas que reflejan tu identidad y conectan profundamente con tu audiencia.</p>
+  </section>
+
+  <section class="process-section">
+    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 50px;">Mi Proceso</h2>
+    <div class="process-grid">
+      <div class="process-card">
+        <h3>1. Descubrimiento</h3>
+        <p>Escucho tus ideas y objetivos para entender tus necesidades y definir el alcance del proyecto.</p>
+      </div>
+      <div class="process-card">
+        <h3>2. Diseño</h3>
+        <p>Creo prototipos visuales y funcionales para que veas cómo cobrará vida tu proyecto.</p>
+      </div>
+      <div class="process-card">
+        <h3>3. Desarrollo</h3>
+        <p>Construyo tu sitio o aplicación con código limpio y tecnologías modernas.</p>
+      </div>
+      <div class="process-card">
+        <h3>4. Entrega</h3>
+        <p>Te entrego un producto listo para usar, con soporte para ajustes finales.</p>
+      </div>
     </div>
-    <div class="value-card">
-      <i class="fas fa-chart-line"></i>
-      <h3>Impacto</h3>
-      <p>Transformamos datos en historias visuales que no solo informan, sino que inspiran, enganchan y generan resultados medibles para tu negocio.</p>
+  </section>
+
+  <section class="portfolio-section">
+    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 50px;">Mi Portafolio</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-card">
+        <h3>Sitios Web Personalizados</h3>
+        <p>Desarrollo sitios únicos para negocios, portafolios y blogs, con un enfoque en diseño y funcionalidad.</p>
+      </div>
+      <div class="portfolio-card">
+        <h3>Aplicaciones Web</h3>
+        <p>Creo aplicaciones interactivas para gestionar datos, mejorar procesos o conectar con usuarios.</p>
+      </div>
+      <div class="portfolio-card">
+        <h3>E-commerce</h3>
+        <p>Diseño tiendas online optimizadas para ventas, con interfaces intuitivas y seguras.</p>
+      </div>
     </div>
+  </section>
+
+  <section class="faq-section">
+    <h2 style="font-size: 2.5rem; margin-bottom: 50px;">Preguntas Frecuentes</h2>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <strong>¿Qué tipo de proyectos realizas?</strong>
+      <div class="faq-answer">Desde sitios web simples hasta aplicaciones web complejas, adaptadas a tus necesidades.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <strong>¿Cuánto tiempo toma un proyecto?</strong>
+      <div class="faq-answer">Depende del alcance, pero suelo entregar proyectos iniciales en 2-6 semanas.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <strong>¿Ofreces soporte tras la entrega?</strong>
+      <div class="faq-answer">Sí, proporciono soporte para ajustes y mantenimiento post-lanzamiento.</div>
+    </div>
+  </section>
+
+  <section class="newsletter-section">
+    <h2 style="font-size: 2.5rem; margin-bottom: 30px;">Suscríbete a Mi Newsletter</h2>
+    <p>Mantente al tanto de mis proyectos, consejos de diseño web y tendencias digitales.</p>
+    <form class="newsletter-form" onsubmit="subscribe(event)">
+      <input type="email" placeholder="Tu correo electrónico" required>
+      <button type="submit">Suscribirse</button>
+    </form>
   </section>
 
   <footer>
-    © 2025 MiDatara · Real Agency | Donde los datos se convierten en experiencias inolvidables
+    © 2025 MiDatara · Real Agency | Transformando datos en realidades digitales | <strong>Contacto</strong>
   </footer>
 
   <script>
     gsap.registerPlugin(ScrollTrigger);
 
-    // Particles.js config for immersive data particles
+    // Particles.js
     particlesJS('particles-js', {
       particles: {
         number: { value: 100, density: { enable: true, value_area: 800 } },
         color: { value: ['#d21f26', '#0a2240', '#ff6b6b', '#ffffff'] },
-        shape: { type: ['circle', 'triangle', 'edge'], polygon: { nb_sides: 5 } },
+        shape: { type: ['circle', 'triangle', 'edge'] },
         opacity: { value: 0.6, random: true },
         size: { value: 4, random: true },
         line_linked: { enable: true, distance: 120, color: '#0a2240', opacity: 0.4, width: 1.5 },
@@ -370,92 +448,47 @@
       retina_detect: true
     });
 
-    // GSAP animations
-    gsap.from('.hero', {
-      duration: 1.5,
-      y: 150,
-      opacity: 0,
-      ease: 'power4.out'
-    });
+    // GSAP Animations
+    gsap.from('.hero', { duration: 1.5, y: 150, opacity: 0, ease: 'power4.out' });
+    gsap.from('.logo-text img', { duration: 2, rotationY: 360, scale: 0.5, ease: 'back.out(1.7)', delay: 0.3 });
+    gsap.from('.hero h1', { duration: 1.5, y: 100, opacity: 0, ease: 'power3.out', delay: 0.5 });
+    gsap.from('.hero p', { duration: 1.5, y: 50, opacity: 0, ease: 'power2.out', delay: 0.7 });
 
-    gsap.from('.logo-text img', {
-      duration: 2,
-      rotationY: 360,
-      scale: 0.5,
-      ease: 'back.out(1.7)',
-      delay: 0.3
-    });
-
-    gsap.from('.hero h1', {
-      duration: 1.5,
-      y: 100,
-      opacity: 0,
-      ease: 'power3.out',
-      delay: 0.5
-    });
-
-    gsap.from('.hero p', {
-      duration: 1.5,
-      y: 50,
-      opacity: 0,
-      ease: 'power2.out',
-      delay: 0.7
-    });
-
-    gsap.utils.toArray('.value-card').forEach((card, i) => {
+    gsap.utils.toArray('.service-card').forEach((card, i) => {
       gsap.from(card, {
-        scrollTrigger: {
-          trigger: card,
-          start: 'top 85%',
-          toggleActions: 'play none none reverse'
-        },
-        duration: 1.2,
-        y: 150,
-        opacity: 0,
-        rotationX: -90,
-        ease: 'back.out(1.7)',
-        delay: i * 0.3
+        scrollTrigger: { trigger: card, start: 'top 85%', toggleActions: 'play none none reverse' },
+        duration: 1.2, y: 150, opacity: 0, rotationX: -90, ease: 'back.out(1.7)', delay: i * 0.3
       });
-
-      card.addEventListener('mouseenter', () => gsap.to(card, { scale: 1.08, boxShadow: '0 20px 50px rgba(0, 0, 0, 0.4)', duration: 0.4 }));
-      card.addEventListener('mouseleave', () => gsap.to(card, { scale: 1, boxShadow: '0 15px 40px rgba(0, 0, 0, 0.3)', duration: 0.4 }));
     });
 
-    gsap.from('.mission', {
-      scrollTrigger: { trigger: '.mission', start: 'top 80%' },
-      duration: 1.5,
-      scale: 0.9,
-      opacity: 0,
-      ease: 'power3.out'
+    gsap.from('.mission', { scrollTrigger: { trigger: '.mission', start: 'top 80%' }, duration: 1.5, scale: 0.9, opacity: 0, ease: 'power3.out' });
+    gsap.from('.mission p', { scrollTrigger: { trigger: '.mission', start: 'top 80%' }, duration: 1.5, y: 50, opacity: 0, stagger: 0.3, ease: 'power2.out' });
+
+    gsap.utils.toArray('.process-card').forEach((card, i) => {
+      gsap.from(card, {
+        scrollTrigger: { trigger: card, start: 'top 85%', toggleActions: 'play none none reverse' },
+        duration: 1.2, y: 150, opacity: 0, ease: 'back.out(1.7)', delay: i * 0.3
+      });
     });
 
-    gsap.from('.mission p', {
-      scrollTrigger: { trigger: '.mission', start: 'top 80%' },
-      duration: 1.5,
-      y: 50,
-      opacity: 0,
-      stagger: 0.3,
-      ease: 'power2.out'
+    gsap.utils.toArray('.portfolio-card').forEach((card, i) => {
+      gsap.from(card, {
+        scrollTrigger: { trigger: card, start: 'top 85%', toggleActions: 'play none none reverse' },
+        duration: 1.2, y: 150, opacity: 0, ease: 'back.out(1.7)', delay: i * 0.3
+      });
     });
 
-    gsap.from('.data-svg path, .data-svg circle, .data-svg text', {
-      scrollTrigger: { trigger: '.data-flow-section', start: 'top 80%' },
-      duration: 2,
-      opacity: 0,
-      scale: 0.8,
-      stagger: 0.2,
-      ease: 'elastic.out(1, 0.5)'
-    });
+    // FAQ Toggle
+    function toggleFaq(element) {
+      const answer = element.querySelector('.faq-answer');
+      answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    }
 
-    // Parallax effect on hero background
-    gsap.to('.hero::after', {
-      scrollTrigger: {
-        trigger: '.hero',
-        scrub: 1
-      },
-      y: 100,
-      ease: 'none'
-    });
+    // Newsletter Submit
+    function subscribe(event) {
+      event.preventDefault();
+      alert('¡Gracias por suscribirte! Te enviaré novedades pronto.');
+    }
   </script>
 </body>
 </html>
