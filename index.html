@@ -39,7 +39,6 @@
       width: 90px;
       height: 90px;
       margin: 0 auto;
-      filter: drop-shadow(0 5px 15px rgba(210, 31, 38, 0.4));
       animation: pulse-logo 2.5s ease-in-out infinite;
     }
 
@@ -71,7 +70,6 @@
     .logo-text img {
       width: 160px;
       height: 160px;
-      filter: drop-shadow(0 15px 30px rgba(210, 31, 38, 0.5));
       transition: transform 0.5s ease;
     }
 
@@ -381,8 +379,7 @@
         <h3>E-commerce</h3>
         <p>Diseño tiendas online optimizadas para ventas, con interfaces intuitivas y seguras.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
   <section class="faq-section">
     <h2 style="font-size: 2.5rem; margin-bottom: 50px;">Preguntas Frecuentes</h2>
@@ -416,9 +413,7 @@
   <script>
     gsap.registerPlugin(ScrollTrigger);
 
-    // GSAP Animations
     gsap.from('.hero', { duration: 1.5, y: 150, opacity: 0, ease: 'power4.out' });
-    gsap.from('.logo-text img', { duration: 2, rotationY: 360, scale: 0.5, ease: 'back.out(1.7)', delay: 0.3 });
     gsap.from('.hero h1', { duration: 1.5, y: 100, opacity: 0, ease: 'power3.out', delay: 0.5 });
     gsap.from('.hero p', { duration: 1.5, y: 50, opacity: 0, ease: 'power2.out', delay: 0.7 });
 
@@ -446,13 +441,11 @@
       });
     });
 
-    // FAQ Toggle
     function toggleFaq(element) {
       const answer = element.querySelector('.faq-answer');
       answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
     }
 
-    // Newsletter Submit
     function subscribe(event) {
       event.preventDefault();
       alert('¡Gracias por suscribirte! Te enviaré novedades pronto.');
